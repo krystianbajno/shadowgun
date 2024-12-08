@@ -68,6 +68,8 @@ with open(REACHABLE_HOSTS) as f:
         time.sleep(5)
         relay_proc.terminate()
         print(f"[+] Completed relay attack for target: {target}")
+        
+        # todo save the Ntlmrelay cert with pass output to file and rename cert to match computer
 
 # todo PKINIT
 
