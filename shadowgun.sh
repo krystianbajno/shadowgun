@@ -1,5 +1,6 @@
 #!/bin/bash
-# this script will relay to LDAP, take over the computers vulnerable to printerbug and webdav client, and save the credentials for them
+# this script will relay to LDAP, take over the computers vulnerable to printerbug and webdav client, and save the credentials for them.
+# Use PKINIT to unPAC the NTLM, save it alongside the machine, and request service tickets for CIFS on all affected computers using overpass-the-hash.
 # Uses ./targets.txt for a list of targets
 # Best to spray the vulnerable to webdav client and printerbug
 # nxc smb <CIDR> -u user -p pass -M printerbug,webdav
